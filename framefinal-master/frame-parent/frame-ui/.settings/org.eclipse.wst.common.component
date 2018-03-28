@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="frame-ui">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="frame-core-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/frame-core/frame-core">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="frame-service-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/frame-service/frame-service">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="frame-serviceapi-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/frame-serviceapi/frame-serviceapi">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="frame-mybatis-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/frame-mybatis/frame-mybatis">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="frame-entity-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/frame-entity/frame-entity">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="frame-shiro-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/frame-shiro/frame-shiro">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="frame-db-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/frame-db/frame-db">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/web-archetype/target/classes"/>
+        <property name="context-root" value="frame-ui"/>
+    </wb-module>
+</project-modules>

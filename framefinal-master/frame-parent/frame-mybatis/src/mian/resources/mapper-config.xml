@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
+		<property name="typeAliasesPackage" value="com.frame"/>
+		<property name="mapperLocations" value="classpath*:com/frame/**/mapper/*.xml"/>
+   		<property name="configLocation" value="classpath:mybatis-config.xml" />  
+    	<property name="dataSource" ref="dataSource"/>  
+	</bean>  
+	
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <property name="basePackage" value="com.frame"/>
+        <property name="annotationClass" value="com.frame.mybatis.MyBatisMapper"/>
+    </bean>
+    	
+</beans>

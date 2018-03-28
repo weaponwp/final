@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dataSourceAspect" class="com.frame.db.wr.DataSourceAspect">
+		<property name="readMethods">
+			<list>
+				<value>get</value>
+				<value>find</value>
+				<value>query</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="com.frame.db.wr.DynamicDataSource">
+		<property name="targetDataSources">
+			<map key-type="java.lang.String">
+				<entry key="master" value-ref="writeDataSource" />
+				<entry key="slave" value-ref="readDataSource" />
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="writeDataSource" />
+	</bean>
+	
+</beans>

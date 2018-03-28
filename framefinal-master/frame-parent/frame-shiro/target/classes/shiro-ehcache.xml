@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+   	xmlns:util="http://www.springframework.org/schema/util"
+   	xmlns:cache="http://www.springframework.org/schema/cache"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/cache   
+        http://www.springframework.org/schema/cache/spring-cache.xsd">
+	
+	<bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
+        <property name="configLocation" value="classpath:ehcache-shiro.xml" />  
+    </bean>  
+    
+    <bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">  
+        <property name="cacheManager" ref="ehCacheManager"/>  
+    </bean>  
+    
+    <bean id="springCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">  
+        <property name="cacheManager" ref="ehCacheManager" />  
+    </bean>  
+    
+    <cache:annotation-driven cache-manager="springCacheManager"/>  
+    
+    <bean id ="sessionDao" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO"/>
+    
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">  
+        <property name="sessionDAO" ref="sessionDao"/>   
+        <property name="sessionIdCookie.name" value="SSID"/>  
+    </bean>  
+    
+</beans>

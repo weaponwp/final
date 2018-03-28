@@ -1,0 +1,14 @@
+use mysql;
+UPDATE user SET Password = PASSWORD('newpass') WHERE user = 'root';
+FLUSH PRIVILEGES;
+
+create TABLE sys_user
+(
+ id int(11) PRIMARY KEY auto_increment,
+ loginId VARCHAR(255), 
+ userName VARCHAR(255), 
+ password VARCHAR(255), 
+ salt VARCHAR(255), 
+ delFlag char(1), 
+ sortBy int(11)
+)

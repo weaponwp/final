@@ -1,0 +1,85 @@
+<dependency>
+  <groupId>commons-codec</groupId>
+  <artifactId>commons-codec</artifactId>
+  <version>1.11</version>
+</dependency>
+
+<dependency>
+  <groupId>org.apache.commons</groupId>
+  <artifactId>commons-lang3</artifactId>
+  <version>3.7</version>
+</dependency>
+
+<dependency>
+  <groupId>commons-fileupload</groupId>
+  <artifactId>commons-fileupload</artifactId>
+  <version>1.3.3</version>
+</dependency>
+
+<dependency>
+  <groupId>commons-io</groupId>
+  <artifactId>commons-io</artifactId>
+  <version>2.6</version>
+</dependency>
+
+<dependency>
+  <groupId>commons-beanutils</groupId>
+  <artifactId>commons-beanutils</artifactId>
+  <version>1.9.3</version>
+</dependency>
+
+<dependency>
+  <groupId>commons-collections</groupId>
+  <artifactId>commons-collections</artifactId>
+  <version>3.2.2</version>
+</dependency>
+
+<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>24.1-jre</version>
+</dependency>
+
+<!-- log -->
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>jcl-over-slf4j</artifactId>
+	<version>${slf4j.version}</version>
+</dependency>
+<dependency>
+	<groupId>ch.qos.logback</groupId>
+	<artifactId>logback-classic</artifactId>
+	<version>1.1.7</version>
+</dependency>
+<!-- datasource pool -->
+<dependency>
+	<groupId>com.alibaba</groupId>
+	<artifactId>druid</artifactId>
+	<version>${druid.version}</version>
+</dependency>
+<!-- mysql -->
+<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>${mysql.version}</version>
+</dependency>
+<!-- json -->
+<dependency>
+	<groupId>com.fasterxml.jackson.core</groupId>
+	<artifactId>jackson-core</artifactId>
+	<version>${jackson.version}</version>
+</dependency>
+<dependency>
+	<groupId>com.fasterxml.jackson.core</groupId>
+	<artifactId>jackson-annotations</artifactId>
+	<version>${jackson.version}</version>
+</dependency>
+<dependency>
+	<groupId>com.fasterxml.jackson.core</groupId>
+	<artifactId>jackson-databind</artifactId>
+	<version>${jackson.version}</version>
+</dependency>
+mvn checkstyle:help 查看帮助
+mvn checkstyle:check 查看工程是否满足检查。如果不满足，检查失败，可以通过target/checkstyle-result.xml来查看
+mvn checkstyle:checkstyle 查看工程是否满足检查。如果不满足，不会失败，可以通过target/site/checkstyle.html查看检查信息
+mvn checkstyle:checkstyle-aggregate 检查工程是否满足检查。如果不满足，不会失败，可以通过target/site/checkstyle.html查看
